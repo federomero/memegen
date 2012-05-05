@@ -5,7 +5,7 @@ class MemeGenerator
   VERSION = "1.0.7"
 
   class << self
-    def generate(path, top, bottom)
+    def generate(path, top, bottom, output_path = "/tmp/meme-#{Time.now.to_i}.jpeg")
       top = top.upcase
       bottom = bottom.upcase
 
@@ -51,7 +51,6 @@ class MemeGenerator
         end
       end
 
-      output_path = "/tmp/meme-#{Time.now.to_i}.jpeg"
       canvas.write(output_path)
       output_path
     end
